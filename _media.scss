@@ -1,0 +1,236 @@
+@media(max-width: 1200px) {
+    nav {
+        padding: .8rem 4rem;
+        gap: 1rem;
+
+        .nav_links {
+            gap: 1rem;
+        }
+
+        .cal_buttons {
+            gap: 0rem;
+
+            span:nth-of-type(1) {
+                width: 150px;
+                gap: .1rem;
+            }
+
+            gap: .8rem;
+
+            button {
+                width: 200px;
+            }
+        }
+    }
+
+    .side_nav {
+        display: none;
+    }
+}
+
+@media(min-width: 980px) and (max-width: 1200px) {
+    section.services_categories {
+        .all_services {
+            width: 100%;
+            flex-direction: column !important;
+
+            div {
+                width: 50% !important;
+            }
+        }
+    }
+}
+
+@media(max-width: 980px) {
+    nav {
+        gap: 5rem;
+
+        .logo {
+            img {
+                width: 140px;
+            }
+        }
+
+        .nav_links {
+            display: none;
+        }
+
+        .cal_buttons {
+
+            button {
+                width: 150px;
+            }
+
+            .menu_button {
+                display: block;
+            }
+        }
+    }
+
+    .side_nav {
+        display: none;
+        width: 70vw;
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    // <<<<<<<<<<============ MAIN SECTION ===========>>>>>>>>>>>>
+
+    .hero_section {
+
+        article {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            margin-inline: 0rem;
+
+            ul {
+                font-size: 14px;
+                text-align: left;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .stats {
+                padding-inline: 1rem;
+                gap: 1rem;
+                align-items: flex-start;
+
+                div {
+                    font-size: 10px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    section.services_categories {
+        width: 90%;
+        margin-top: 1rem;
+
+        div.all_services {
+            padding-inline: 1.2rem;
+            flex-direction: column;
+            width: 90%;
+
+            div {
+                width: 100%;
+                padding: 10px 10px;
+                font-size: 1rem;
+
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    nav {
+        .right-side {
+            display: none;
+        }
+    }
+
+    .mobile_navbar {
+        padding-block: .7rem;
+        padding-inline: 1.8rem;
+        position: fixed;
+        bottom: 0;
+        z-index: 4;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            background-color: #d4fd52;
+            color: black;
+            width: 180px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .7rem;
+            font-size: .9rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .menu_button {
+            cursor: pointer;
+        }
+    }
+
+    .side_nav {
+        display: none !important;
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        width: 95vw;
+        height: 100vh;
+        padding: 10px;
+
+        .menu_button {
+            color: rgb(43, 43, 43);
+        }
+    }
+
+    .hero_section {
+        height: 100vh;
+
+        article {
+            ul {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    .hero_section {
+        article {
+            gap: 5rem;
+
+            h4 {
+                font-size: 1rem;
+                color: #888686;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: bold;
+                width: 80%;
+            }
+
+            ul {
+                padding-inline: 2rem;
+                line-height: 1.6;
+            }
+
+            .buttons {
+                gap: 2rem;
+            }
+
+            .stats {
+                gap: 0;
+                justify-content: center;
+
+                img {
+                    align-self: flex-start;
+                    width: 20px;
+                }
+
+                div {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}
