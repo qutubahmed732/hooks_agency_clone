@@ -17,6 +17,7 @@
 body {
     font-family: "my_font", sans-serif;
     background-color: black;
+    overflow-x: hidden;
 }
 
 // <<<<<<<<<<<<<<<================== BIG SCREEN NAVBAR ==============>>>>>>>>>>>>
@@ -35,6 +36,12 @@ nav {
         display: flex;
         align-items: center;
         gap: .8rem;
+    }
+
+    .right-side {
+        .topnav_button {
+            cursor: pointer;
+        }
     }
 
     .nav_links {
@@ -619,44 +626,6 @@ nav {
 .mobile_navbar {
     display: none;
 }
-
-
-// <<<<<<<<<<<<============= SIDE NAV =============>>>>>>>>>>>>>>
-
-.side_nav {
-    width: 45vw;
-    height: 100vh;
-    position: absolute;
-    inset: 0;
-    margin: 0 0 0 auto;
-    background-color: #5e6a75;
-    color: white;
-    padding: 2rem;
-
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-
-    ul {
-        overflow-y: scroll;
-        list-style: none;
-        // border: 1px solid red;
-        max-height: 60vh;
-        font-size: 1.5rem;
-        padding-top: 2rem;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 1.2rem;
-    }
-
-    div {
-        align-self: flex-end;
-    }
-}
-
 
 // <<<<<<<<<<<<<<============ MAIN SECTION =============>>>>>>>>>>>>>>>>
 
@@ -1848,6 +1817,106 @@ $border-radius: 12px;
     }
 }
 
+// <<<<<<<<<<<<<========== MOBILE - NAVBAR =============>>>>>>>>>>>>>>>>>..
+
+aside {
+    position: fixed;
+    top: 0;
+    right: -120%;
+    z-index: 999999;
+    width: 30%;
+    height: auto;
+    background-color: #212529;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: inset 0.7s ease-in-out;
+    padding: 20px 0;
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @media(max-width: 900px){
+        width: 100%;
+    }
+
+    .all_elements {
+        margin: 0rem auto;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        @media(max-width: 1200px){
+            height: 80%;
+            justify-content: center;
+        }
+
+        @media(max-width: 400px){
+            margin-block: 2rem;
+        }
+    }
+
+    .nav_links_aside {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        height: 70vh;
+    }
+
+
+
+    .dropdown {
+        .dropdown-heading_services, .dropdown-heading_about, .dropdown-heading_resources {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        .dropdown_content_services, .dropdown_content_about, .dropdown_content_resources{
+            display: none;
+            font-size: 1rem;
+            font-weight: normal;
+            padding-top: 5px;
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    .fa-xmark {
+        align-self: flex-end;
+        border: 3px solid #404040;
+        width: 50px;
+        aspect-ratio: 1/1;
+        align-content: center;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .Schedule_intro_call {
+        width: 300px;
+        height: 50px;
+        background-color: #d4fd52;
+        color: black;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+    }
+}
 
 
 // <<<<<<<<<<<<<<<================ MEDIA QUERRY ================>>>>>>>>>>>>>>>>>>>
