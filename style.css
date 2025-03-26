@@ -12,6 +12,10 @@
   font-family: "font_bold";
   src: url("Montserrat/static/Montserrat-ExtraBold.ttf");
 }
+:root {
+  interpolate-size: allow-keywords;
+}
+
 body {
   font-family: "my_font", sans-serif;
   background-color: black;
@@ -1745,6 +1749,104 @@ section.services_categories .divider {
   .client-story-section .client_information {
     flex-direction: column;
   }
+}
+
+.faq_section {
+  padding-block: 4rem 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 700px) {
+  .faq_section {
+    padding-bottom: 6rem;
+  }
+}
+.faq_section .faq_heading_section {
+  text-align: center;
+}
+.faq_section .faq_heading_section p {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #adb5c3;
+  letter-spacing: 2px;
+}
+.faq_section .faq_heading_section h1 {
+  margin-block: 0.5rem 1.5rem;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 100;
+}
+.faq_section .accordion_section {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 1100px) {
+  .faq_section .accordion_section {
+    width: 90%;
+  }
+}
+.faq_section details {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 60%;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .faq_section details {
+    width: 90%;
+  }
+}
+.faq_section details::details-content {
+  font-size: 14px;
+  line-height: 1.5;
+  block-size: 0;
+  transition: block-size 1s, content-visibility 1s, padding 3s;
+  transition-behavior: allow-discrete;
+}
+.faq_section details[open]::details-content {
+  padding: 1rem 1.5rem;
+  block-size: auto;
+}
+.faq_section summary {
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (max-width: 700px) {
+  .faq_section summary {
+    font-size: 14px;
+  }
+}
+.faq_section summary span {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  transition: rotate 1s ease-in-out;
+  font-size: 12px;
+  text-align: center;
+  align-content: center;
+}
+.faq_section summary::marker {
+  content: "";
+}
+.faq_section details[open] summary > span {
+  rotate: 180deg;
+  transition: rotate 1s ease-in-out;
 }
 
 aside {
