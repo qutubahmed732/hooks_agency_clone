@@ -1776,7 +1776,7 @@ section.services_categories {
 
             p {
                 color: #333;
-                font-size: 1rem;
+                font-size: 13px;
                 line-height: 1.5;
                 margin-bottom: 15px;
             }
@@ -1786,7 +1786,7 @@ section.services_categories {
                 background: transparent;
                 border: 1px solid black;
                 padding: 15px 20px;
-                font-size: 1rem;
+                font-size: 14px;
                 font-weight: 600;
                 text-decoration: none;
                 color: black;
@@ -1810,13 +1810,11 @@ section.services_categories {
         padding-bottom: 4rem;
     }
 
-    @at-root {
-
-        .black-shadow {
-            width: 100%;
-            box-shadow: 0 0 0 200px black;
-        }
+    .black-shadow {
+        width: 100%;
+        box-shadow: 0 0 0 200px black;
     }
+
 }
 
 // <<<<<<<<<<<<============== CLIENT - STORY - SECTION =============>>>>>>>>>>>>>
@@ -2316,11 +2314,13 @@ section.services_categories {
         border-radius: 15px;
         overflow: hidden;
         margin: 0px auto;
-        width: 85%;
+        width: calc(80% + (100vw - 100%) * 1);
+        max-width: 100vw;
         display: flex;
         align-items: center;
 
         .container {
+            border-bottom: 1px solid white;
             position: relative;
             z-index: 2;
             width: 100%;
@@ -2367,7 +2367,8 @@ section.services_categories {
             }
 
             .flex {
-                padding-block: 3rem 5rem;
+                position: relative;
+                padding-block: 5rem 1rem;
                 color: white;
                 text-align: center;
                 background-color: black;
@@ -2379,8 +2380,7 @@ section.services_categories {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: space-evenly;
-                gap: 2rem;
+                justify-content: center;
 
                 h1 {
                     font-size: clamp(1.5rem, 4vw, 3rem);
@@ -2394,10 +2394,12 @@ section.services_categories {
                     padding-inline: clamp(1.5rem, 4vw, 3rem);
                     font-weight: 600;
                     line-height: 1.5;
+                    margin-top: 1rem;
 
                 }
 
                 .testimonial_name {
+                    margin-top: 1rem;
                     margin-bottom: 3rem;
                     display: flex;
                     align-items: center;
@@ -2421,14 +2423,14 @@ section.services_categories {
                 a {
                     position: relative;
                     width: 200px;
-                    height: 100px;
-                    padding: 20px 30px;
+                    padding: 15px 30px;
                     background-color: #d4fd52;
                     border-radius: 6px;
                     text-decoration: none;
                     color: black;
                     text-transform: capitalize;
                     font-weight: 900;
+                    margin-top: 1rem;
 
                     &::after {
                         content: "";
@@ -2448,12 +2450,140 @@ section.services_categories {
                         opacity: 0.5;
                     }
                 }
+
+                .intro-call {
+                    align-self: flex-start;
+                }
+            }
+
+            @media(max-width: 980px) {
+                flex-direction: column;
+
+                .picture,
+                .flex {
+                    width: 100%;
+                    padding: 0;
+
+                    .intro-call {
+                        width: 150px;
+                    }
+                }
             }
         }
+
+        @media(max-width: 980px) {
+            width: 95%;
+        }
+    }
+
+    .black-shadow {
+        width: 100%;
+        box-shadow: 0 0 0 100px black;
+    }
+
+    @media(max-width: 980px) {
+        margin-bottom: 3rem;
     }
 }
 
 
+// <<<<<<<<<<<<============== FOOTER ==============>>>>>>>>>>>>>>>>>>
+
+footer {
+    margin: 10px auto;
+    color: white;
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    .footer_contact {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .site-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .site-contact_item {
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    img {
+                        width: 50px;
+                    }
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+
+                        span:nth-of-type(1) {
+                            color: #828282;
+                            font-size: 13px;
+                        }
+
+                        span:nth-of-type(2) {
+                            color: white;
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer_links {
+        width: 60%;
+        border: 1px solid green;
+        display: flex;
+        flex-direction: column;
+
+        .links {
+            border: 1px solid red;
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                a {
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: inherit;
+                }
+
+                .list {
+                    list-style: none;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .inline-form {
+            align-self: flex-end;
+            .form_wrapper {
+                form {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
 
 // <<<<<<<<<<<<<========== MOBILE - NAVBAR =============>>>>>>>>>>>>>>>>>..
 
